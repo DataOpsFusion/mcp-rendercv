@@ -1,0 +1,30 @@
+{
+  "_comment": "Choose one block depending on how you're running the server.",
+
+  "_local_stdio": {
+    "_note": "Use this when running rendercv-mcp locally with uv.",
+    "mcpServers": {
+      "rendercv": {
+        "command": "uv",
+        "args": [
+          "run",
+          "--project", "/absolute/path/to/rendercv-mcp",
+          "rendercv-mcp"
+        ],
+        "env": {
+          "RENDERCV_WORKSPACE": "/Users/datta/resumes"
+        }
+      }
+    }
+  },
+
+  "mcpServers": {
+    "_note": "Use this block for the remote Docker-Server deployment.",
+    "rendercv": {
+      "url": "http://192.168.0.70:8282/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_RENDERCV_API_KEY"
+      }
+    }
+  }
+}
